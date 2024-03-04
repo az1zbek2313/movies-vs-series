@@ -1,0 +1,9 @@
+.trading{
+    /* Heading (L) */
+    color: rgb(255, 255, 255);
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 40px;
+    letter-spacing: -0.5px;
+    text-align: left;
+}

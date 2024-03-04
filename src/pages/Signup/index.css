@@ -1,0 +1,161 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+.container{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+}
+.container img{
+   margin-top:30px;
+}
+.container .card-wrapperr{
+    width: 420px;
+    height: 480px;
+     padding: 32px;
+     padding-top: 0;
+     margin-top: 40px;
+     border-radius: 20px;
+ 
+     /* Semi Dark Blue */
+     background: rgb(22, 29, 47);
+ }
+ .card-wrapperr .title{
+     text-align: center;
+     margin-top: 30px;
+ }
+/* .form-floating{
+    background:transparent;
+} */
+.formControl{
+    background:transparent;
+    border-radius: 0;
+    border:none;
+    width: 100%;
+    margin-top: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgb(90, 105, 143);
+    outline: none;
+    color:white;
+}
+.formControl:hover{
+    cursor: pointer;
+}
+.formControl::-webkit-input-placeholder{
+        /* Pure White */
+    opacity: 0.5;
+        /* Body (M) */
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 19px;
+    letter-spacing: 0px;
+    text-align: left;
+}
+.formControl::-moz-placeholder{
+        /* Pure White */
+    opacity: 0.5;
+        /* Body (M) */
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 19px;
+    letter-spacing: 0px;
+    text-align: left;
+}
+.formControl:-ms-input-placeholder{
+        /* Pure White */
+    opacity: 0.5;
+        /* Body (M) */
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 19px;
+    letter-spacing: 0px;
+    text-align: left;
+}
+.formControl::-ms-input-placeholder{
+        /* Pure White */
+    opacity: 0.5;
+        /* Body (M) */
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 19px;
+    letter-spacing: 0px;
+    text-align: left;
+}
+.formControl::placeholder{
+        /* Pure White */
+    opacity: 0.5;
+        /* Body (M) */
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 19px;
+    letter-spacing: 0px;
+    text-align: left;
+}
+.password{
+    margin-top: 10px;
+}
+.button{
+    border-radius: 6px;
+
+    /* Red */
+    background: rgb(252, 71, 71);
+    padding: 14px;
+    width: 100%;
+    /* Body (M) */
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 19px;
+    letter-spacing: 0px;
+    text-align: center;
+    margin-top: 10px;
+}
+.button:hover{
+    border-radius: 6px;
+    /* Pure White */
+    background: rgb(255, 255, 255);
+    color:darkblue;
+}
+.span-signup{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    gap: 8px;
+}
+.span-signup p,a{
+    /* Body (M) */
+color: rgb(255, 255, 255);
+padding-top: 24px;
+font-size: 15px;
+font-weight: 300;
+line-height: 19px;
+letter-spacing: 0px;
+text-align: right;
+text-decoration: none;
+}
+.span-signup a{
+    color:red;
+}
