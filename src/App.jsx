@@ -28,8 +28,10 @@ function App() {
   return (
     <>
       <Routes>
+        <Route>
         {!token && <Route path="/signup" element={<Signup />} />}
-        {!token && <Route path="/login" element={<Login />} />}
+        {!token && <Route path="/ login" element={<Login />} />}
+        </Route>
         <Route path="/" element={<Layout setSearch={setSearch} />}>
           <Route index element={<Home search={search} />} />
           <Route path="movie" element={<Movie search={search} />} />

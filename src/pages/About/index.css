@@ -4,6 +4,7 @@
     justify-content: space-evenly;
     align-items: center;
 }
+
 .titile1{
     position: relative;
     right: 50px;
@@ -38,8 +39,10 @@
 }
 .card-wrapper .card-action .image{
     width:300px;
-    height: 160px;
+    height: 180px;
+    object-fit: scale-down;
     margin: 0;
+    border-radius:10px;
 }
 .card-wrapper .card-action .title{
     width:300px;
