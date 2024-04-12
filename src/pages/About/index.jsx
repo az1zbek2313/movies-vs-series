@@ -21,8 +21,8 @@ function About() {
     !datas.loading 
     ? 
         <div className='about'>
-        <div style={{width: '50%', height: '100%'}}  className="card mb-3">
-            <img style={{width: '100%', height: '38vh'}} src={datas.data ? `${datas.data.poster.url}`:`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4Tv6hC5RRm6YaHOj3_ge90KeNPIxpgiiaTw&usqp=CAU`} className='card-img-top' alt="image" />
+        <div style={{width: '90%', height: '100%'}}  className="card-about mb-3">
+            <img style={{width: '40%', height:'80vh'}} src={datas.data ? `${datas.data.poster.url}`:`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4Tv6hC5RRm6YaHOj3_ge90KeNPIxpgiiaTw&usqp=CAU`} className='card-img-top' alt="image" />
             <div className="card-body">
                 <h5 className="card-title">{datas.data ? datas.data.name : "Name"}</h5>
                 <p className="card-text1">YEAR: {datas.data ? datas.data.year : "0000"}</p>
@@ -97,15 +97,6 @@ function About() {
                 </Card>
             </div>
         </div>
-        <h1 className='titile1'>
-            <h2>P</h2>
-            <h2>E</h2>
-            <h2>S</h2>
-            <h2>O</h2>
-            <h2>N</h2>
-            <h2>A</h2>
-            <h2>L</h2>
-        </h1>
         </div>
     :
         <ThreeCircles

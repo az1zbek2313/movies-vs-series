@@ -11,7 +11,7 @@ function Home(props) {
   const [key, setKey] = useState();
 
   const datas = useFetch(
-    `${import.meta.env.VITE_API}/v1.4/movie?page=12&limit=22`
+    `${import.meta.env.VITE_API}/v1.4/movie?page=32&limit=42`
   );
   const all = useFetch(
     `${import.meta.env.VITE_API}/v1.4/movie?page=1&limit=200`

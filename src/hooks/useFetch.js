@@ -10,7 +10,7 @@ function useFetch(url) {
         fetch(url, {
             method: 'GET',
             headers:{
-                'X-API-KEY': 'VX3ZZN2-QM5M042-J1SHHTB-1HPXCDG'
+                'X-API-KEY': '03CBSNT-V2F4R9C-MC6BPTK-PN6AM2E'
         }
         })
          .then(res => res.json())

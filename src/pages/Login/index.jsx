@@ -70,6 +70,7 @@ function Login() {
        .catch(err => {
         setError(true);
         setWords(err);
+        console.log(err);
        })
        .finally(() => {
           setLoading(false)
