@@ -1,10 +1,10 @@
 import "./index.css";
 import icon from "../../assets/Movie.png";
 import {Link, useNavigate} from "react-router-dom";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Alert } from "@mui/material";
 
-function Login() {
+function Login({setToken}) {
   const [loading, setLoading] = useState(null)
   const [error, setError] = useState(false);
   const [words, setWords] = useState('');
@@ -41,8 +41,6 @@ function Login() {
     }
     const isvalid = validate(username, password);
     if (isvalid) {
-      username.current.value = '';
-      password.current.value = '';
       setError(false);
       setWords('')
       fetch(`${import.meta.env.VITE_AP}/api/auth/signin`, {
@@ -56,6 +54,7 @@ function Login() {
        .then(data => {
         if (data.id) {
           localStorage.setItem('token', JSON.stringify(data.accessToken));
+          setToken(data.accessToken)
           navigate('/')
         }
           if (data.message == "User Not found.") {

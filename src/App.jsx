@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { Routes, Route, useNavigate, useParams } from "react-router-dom";
 import Layout from "./loyaut/Layout";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
@@ -9,43 +9,45 @@ import Series from "./pages/Series";
 import Bookmarks from "./pages/Bookmarks";
 import About from "./pages/About";
 
-function ProtectedRoute({ children, redirectTo = '/login', isAuthenticated }) {
+function ProtectedRoute({ children, redirectTo = '/login', isAuthenticated, ...rest }) {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!isAuthenticated) {
+    if (!isAuthenticated && rest.path !== '/login') {
       navigate(redirectTo);
     }
-  }, [isAuthenticated, navigate, redirectTo]);
+    
+  }, [isAuthenticated, navigate, redirectTo, rest.path]);
 
-  return isAuthenticated ? children : null;
+  return children;
 }
+
 
 function App() {
   const [token, setToken] = useState(localStorage.getItem("token"));
   const [search, setSearch] = useState('');
 
   useEffect(() => {
-    const storedToken = localStorage.getItem("token");
 
-    if (!storedToken) {
-      setToken(false);// Redirect to login if no token found
+    if (token) {
+      setToken(localStorage.getItem('token'))
     } else {
-      setToken(storedToken);
+      setToken(false);
     }
+
   }, []);
 
   return (
     <>
       <Routes>
         <Route path="/signup" element={<Signup />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<Login setToken={setToken}/>} />
 
         <Route element={<Layout setSearch={setSearch} />}>
           <Route
             path="/"
             element={
-              <ProtectedRoute redirectTo="/login" isAuthenticated={token ? true : false}>
+              <ProtectedRoute isAuthenticated={token ? true : false}>
                 <Home search={search} />
               </ProtectedRoute>
             }
@@ -53,7 +55,7 @@ function App() {
           <Route
             path="movie"
             element={
-              <ProtectedRoute redirectTo="/login" isAuthenticated={token ? true : false}>
+              <ProtectedRoute isAuthenticated={token ? true : false}>
                 <Movie search={search} />
               </ProtectedRoute>
             }
@@ -61,7 +63,7 @@ function App() {
           <Route
             path="series"
             element={
-              <ProtectedRoute redirectTo="/login" isAuthenticated={token ? true : false}>
+              <ProtectedRoute isAuthenticated={token ? true : false}>
                 <Series search={search} />
               </ProtectedRoute>
             }
@@ -69,7 +71,7 @@ function App() {
           <Route
             path="bookmarks"
             element={
-              <ProtectedRoute redirectTo="/login" isAuthenticated={token ? true : false}>
+              <ProtectedRoute isAuthenticated={token ? true : false}>
                 <Bookmarks search={search} />
               </ProtectedRoute>
             }
@@ -79,7 +81,7 @@ function App() {
         <Route
           path="/about"
           element={
-            <ProtectedRoute redirectTo="/login" isAuthenticated={token ? true : false}>
+            <ProtectedRoute isAuthenticated={token ? true : false}>
               <About search={search} />
             </ProtectedRoute>
           }

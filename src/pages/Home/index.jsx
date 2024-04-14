@@ -11,10 +11,10 @@ function Home(props) {
   const [key, setKey] = useState();
 
   const datas = useFetch(
-    `${import.meta.env.VITE_API}/v1.4/movie?page=32&limit=42`
+    `${import.meta.env.VITE_API}/v1.4/movie?page=32&limit=40`
   );
   const all = useFetch(
-    `${import.meta.env.VITE_API}/v1.4/movie?page=1&limit=200`
+    `${import.meta.env.VITE_API}/v1.4/movie?page=1&limit=100`
   );
   const search = useFetch(
     `${import.meta.env.VITE_API}/v1.4/movie/search?page=1&limit=10&query=${key}`
